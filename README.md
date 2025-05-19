@@ -7,10 +7,14 @@ To address low cross-sell conversion rates, our client seeks to refine targeting
 3.	How can marketing resources be deployed more strategically based on predictive segmentation?
 
 ## Data Preparation 
-•	Dataset: Over 380,000 customer records with demographic and behavioral attributes
-•	Preprocessing: Outliers in Annual_Premium were capped at the 99th percentile; missing values were imputed using the median
-•	Factor conversion: Categorical variables such as Vehicle_Damage and Policy_Sales_Channel were recast as factors
-•	Feature engineering: Introduced Premium_Per_Day as a normalized cost indicator (premium divided by tenure)
+
+![Screenshot 2025-05-19 151504](https://github.com/user-attachments/assets/8305d84a-f8e2-464e-aa53-80790de0f4d7)
+
+![Screenshot 2025-05-19 151515](https://github.com/user-attachments/assets/9d4f1745-1f97-49ff-b7a1-677eed1b048b)
+
+
+![Screenshot 2025-05-19 151527](https://github.com/user-attachments/assets/3b90280e-997a-4ef1-8fec-4febba176886)
+
 
 ## Modeling Techniques
 Technique		Validation AUC		Sensitivity		Specificity
@@ -18,26 +22,19 @@ Logistic Regression	0.8460			92.9%			67.3%
 Random Forest		0.8364			11.4%			97.2%
 XGBoost			0.8571			92.9%			67.3%
 Linear SVM		0.8459			94.4%			63.7%
+![Validation AUC scores](https://github.com/user-attachments/assets/b673d054-77c1-452b-b836-42897be90cf0)
 
 •	XGBoost performed best overall, balancing precision and recall
 •	SVM achieved the highest recall, valuable for minimizing missed conversions
 •	Random Forest had the highest specificity fewer false positives, but poor recall for interested customers
-
-## Key insights
-Customer Behavior Driver
-•	Vehicle_Damage = Yes significantly correlates with higher response likelihood (~24%) ~ 0.5% for No 
-•	Customers between 30 and 50 years old with moderate Annual_Premium levels show a higher propensity to respond positively to vehicle insurance offers. (See Figure 1.)
-•	Feature: Premium_Per_Day identified high conversion for cost-conscious users Conversion by Channel and Region
-•	Channels 152, 26, and 124 yield the most conversions and highest customer engagement 
-•	Channels 163 and 157 showed the highest conversion rates (efficiency)
-Segmentation-Driven Recommendations
-•	High conversion groups share combinations of vehicle damage history, mid-range premiums, and active driving status
-•	Feature Premium_Per_Day helps rank customers by financial sensitivity, guiding value-based targeting 
+![Screenshot 2025-05-19 151536](https://github.com/user-attachments/assets/08610b1f-cede-4f26-9948-81f07f5c69e5)
 
 ## Interpretations 
 •	Which features matter most for customer interest (vehicle damage, premium-per-day, driving license status)
 •	Which top-performing channels (Channels 152, 26, and 124) and regions for resource allocation.
 •	How segmentation can improve conversion (Premium_Per_Day tiers)
+
+![Screenshot 2025-05-19 151545](https://github.com/user-attachments/assets/194e9215-73ae-4ae3-9a64-c0174f2b7b79)
 
 ## Limitations 
 •	Premium_Per_Day is highly skewed, which may introduce bias when used for segmentation. Normalization or binning to reduce distortion may benefit future preprocessing.
