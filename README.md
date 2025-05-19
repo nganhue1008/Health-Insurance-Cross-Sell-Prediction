@@ -37,9 +37,8 @@ Linear SVM		0.8459			94.4%			63.7%
 ![Screenshot 2025-05-19 151545](https://github.com/user-attachments/assets/194e9215-73ae-4ae3-9a64-c0174f2b7b79)
 
 ## Limitations 
-•	Premium_Per_Day is highly skewed, which may introduce bias when used for segmentation. Normalization or binning to reduce distortion may benefit future preprocessing.
-•	Regional codes are anonymized and may contain confounding factors (e.g., urban vs. rural differences) that are not currently captured. Enriching the dataset with socioeconomic or geographic context would improve segmentation.
-•	Data Gaps: Key variables such as income, claims history, or digital behavior (e.g., clicks, app activity) were not available, which may affect both accuracy and business relevance.
+
+![Screenshot 2025-05-19 151553](https://github.com/user-attachments/assets/7415de47-6a4a-4581-adcf-584df0e72a37)
 
 ## Recommendations 
 Customer Targeting:
